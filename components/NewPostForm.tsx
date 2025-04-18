@@ -4,11 +4,7 @@ import { Textarea } from "@mui/joy";
 import { Button, TextField } from "@mui/material";
 import { useState } from "react";
 
-export default function NewPostForm({
-                                        append,
-                                    }: {
-    append: (newPost: PostProps) => void;
-}) {
+export default function NewPostForm({append,}: { append: (newPost: PostProps) => void; }) {
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
     const [error, setError] = useState<string | null>(null);

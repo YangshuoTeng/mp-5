@@ -6,12 +6,12 @@ export default function RootLayout(
 ) {
     return (
         <html lang="en">
-        <body style={{ backgroundColor: "#ffe4e1", margin: "0", padding: "0" }}>
-        <Header />
-        <main style={{ padding: '110px' }}>
-            {children}
-        </main>
-        </body>
+            <body style={{ backgroundColor: "#ffe4e1", margin: "0", padding: "0" }}>
+                <Header />
+                <main style={{ padding: '110px' }}>
+                    {children}
+                </main>
+            </body>
         </html>
     );
 }

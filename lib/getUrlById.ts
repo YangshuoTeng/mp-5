@@ -12,7 +12,7 @@ export default async function getPostById(
   }
 
   const post = {
-    id: data._id.toString(),
+    id: data._id.toHexString(),
     inputUrl: data.inputUrl,
     outputUrl: data.outputUrl,
   };

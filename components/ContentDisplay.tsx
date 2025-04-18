@@ -14,7 +14,10 @@ export default function ContentDisplay() {
   return (
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <NewPostForm append={append} />
-        {latestPost && <PostPreview key={latestPost.id} post={latestPost} />}
+        {
+            latestPost &&
+            <PostPreview key={latestPost.id} post={latestPost} />
+        }
       </div>
   );
 }
