@@ -1,6 +1,4 @@
-export type PostProps = {
-  id: string;
-  inputUrl: string;
-  outputUrl: string;
+export type EntryProps = {
+  alias: string;
+  url: string;
 };
-

@@ -1,14 +1,16 @@
-import getCollection, {URI_COLLECTION} from "@/db";
-import {PostProps} from "@/types";
+import getCollection, {ENTRIES_COLLECTION} from "@/db";
 
-export default async function getUrl():Promise<PostProps[]> {
-  const urlCollection = await getCollection(URI_COLLECTION);
-  const data = await urlCollection.find().toArray();
+export default async function getUrl(alias: string): Promise<string | null> {
+    if (!alias) {
+        return null;
+    }
 
-  const posts: PostProps[] = data.map((p)=>({
-    id: p._id.toHexString(),
-    inputUrl:p.inputUrl,
-    outputUrl:p.outputUrl,
-  }));
-  return posts.reverse();
+    const entriesCollection = await getCollection(ENTRIES_COLLECTION);
+    const doc = await entriesCollection.findOne({alias});
+
+    if (!doc) {
+        return null;
+    }
+
+    return doc.url;
 }

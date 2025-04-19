@@ -6,7 +6,7 @@ if (!MONGO_URI) {
 }
 
 const DB_NAME = "cs391-mp5";
-export const URI_COLLECTION = "uri-collection";
+export const ENTRIES_COLLECTION = "entries-collection";
 
 let client: MongoClient | null = null;
 let db: Db | null = null;
